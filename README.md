@@ -13,9 +13,23 @@ fork builds and passes smoke tests; the tab engine is still being written.
 ## What is in this repository
 
 Only documentation. The browser itself is a Chromium build (~1.1 GB per snapshot),
-so the binaries live in [Releases](../../releases) instead of git. See
-[REVISIONS.md](REVISIONS.md) for all 59 local build snapshots and the build log
-history.
+so it is **not** hosted as a download. See [REVISIONS.md](REVISIONS.md) for all 59
+local build snapshots, the 9 Chromium manifests and the build log history.
+
+## Rebuild it locally
+
+The engine comes from Chromium itself; this project supplies the patches on top:
+
+1. Install [depot_tools](https://chromium.googlesource.com/chromium/src/+/main/docs/get_the_code.md)
+   and add it to , then run  and
+   .
+2. Check out the pinned stable tag used by the latest build — …
+   , listed in [REVISIONS.md](REVISIONS.md).
+3. Apply the GP patches, set  in the GN args, then
+    and .
+
+If you only need a prebuilt Chromium binary instead of building one, Google
+publishes them on the [Chrome for Testing download page](https://googlechromelabs.github.io/chrome-for-testing/).
 
 ## Why there is no Chromium source here
 
